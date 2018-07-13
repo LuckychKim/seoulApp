@@ -1,7 +1,7 @@
 spring:
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://127.0.0.1:3306/test?useServerPrepStmts=false&allowMultiQueries=true
+    url: jdbc:mariadb://127.0.0.1:3306/seoulapp?useServerPrepStmts=false&allowMultiQueries=true
     username: holeman79
     password: 1234
 
@@ -12,11 +12,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         
-  mybatis:
-    mapperlocations: classpath:/seoulapp/test/**/*Dao.xml
-    configuration:
-      lazyLoadingEnabled=true
-      aggressiveLazyLoading=false
-      mapUnderscoreToCamelCase=true
+mybatis:
+  mapper-locations: classpath:seoulapp/test/**/*Dao.xml
+
+
+
+  
   
         
