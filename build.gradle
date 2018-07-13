@@ -29,6 +29,7 @@ dependencies {
     compile('org.hibernate.javax.persistence:hibernate-jpa-2.1-api')
     compile('org.hibernate:hibernate-core:5.2.0.Final')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile 'org.apache.clerezza.ext:org.json.simple:0.4'
 	
 	//log4j2
 	compile("org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16")
