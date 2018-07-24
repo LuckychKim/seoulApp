@@ -90,8 +90,9 @@ public class testController {
 			json.put("result", "success");
 			response.setContentType("application/json");
 			response.setCharacterEncoding("UTF-8");
-			response.getWriter().write(json.toString());
-			
+			//response.getWriter().write(json.toString());
+			response.getOutputStream().print(json.toString());
+			//response.getOutputStream().
 		}catch(Exception e){
 			e.printStackTrace();
 		}
