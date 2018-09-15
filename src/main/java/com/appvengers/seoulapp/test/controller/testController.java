@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.appvengers.seoulapp.common.config.PersistenceConfig;
 import com.appvengers.seoulapp.test.dao.MultiPKDao;
 import com.appvengers.seoulapp.test.dao.TestDao;
 import com.appvengers.seoulapp.test.dao.TestDaoMybatis;
@@ -45,8 +44,8 @@ public class testController {
 	@Autowired
 	MultiPKDao multiPkDao;
 	
-	@Autowired
-	PersistenceConfig psConfig;
+	//@Autowired
+	//PersistenceConfig psConfig;
 	
 	@RequestMapping("/test/testMethod")
 	public boolean testMethod(HttpServletRequest request, HttpServletResponse response) {
@@ -126,7 +125,7 @@ public class testController {
 	)*/
 	@PostMapping( "/test/multiPK" )
 	public boolean multiPKMapping() {
-		EntityManager em = psConfig.getEntityManager();
+		EntityManager em = null;//psConfig.getEntityManager();
 		em.getTransaction().begin();
 		EmpPK empPk = new EmpPK();
 		
