@@ -18,9 +18,7 @@ import lombok.Getter;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private String userId;
-	
 	private String userName;
 	private String userImg;
 	private LocalDate regDt;
