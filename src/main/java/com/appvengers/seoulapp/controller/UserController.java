@@ -21,7 +21,7 @@ public class UserController {
 	UserService userService;
 	
 	@PostMapping("/login")
-	public boolean loginOrJoin(User user) {
+	public boolean loginOrJoin(@RequestBody User user) {
 		return userService.loginOrJoin(user);
 	}
 	

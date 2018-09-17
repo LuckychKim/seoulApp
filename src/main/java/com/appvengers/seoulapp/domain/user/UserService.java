@@ -14,7 +14,7 @@ public class UserService {
 	UserRepository userRepository;
 	
 	public boolean loginOrJoin(User user) {
-
+		
 		User findUser = userRepository.findByUserId(user.getUserId());
 		Optional<User> findUser2 = userRepository.findById(user.getUserId());
 		findUser2.get().getUserId();
