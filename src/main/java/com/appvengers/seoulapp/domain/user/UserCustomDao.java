@@ -6,5 +6,5 @@ public interface UserCustomDao{
 
 	List<User> findAllUserByUserName();
 	List<String> findAllUserName();
-	List<LoginInfo> findAllUser();
+	List<LoginInfo> findAllLoginInfoByUserId(User pUser);
 }

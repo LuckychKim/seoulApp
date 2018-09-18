@@ -10,9 +10,6 @@ import com.querydsl.jpa.JPQLQuery;
 
 public class UserCustomDaoImpl extends QuerydslRepositorySupport implements UserCustomDao {
 
-//	@PersistenceContext
-//	private EntityManager entityManager;
-	
 	public UserCustomDaoImpl() {
 		super(User.class);
 	}
@@ -35,7 +32,7 @@ public class UserCustomDaoImpl extends QuerydslRepositorySupport implements User
 	}
 
 	@Override
-	public List<LoginInfo> findAllUser() {
+	public List<LoginInfo> findAllLoginInfoByUserId(User pUser) {
 		QUser user = QUser.user;
 		QUserDetail userDetail = QUserDetail.userDetail;
 		QCommon common = QCommon.common;
@@ -43,12 +40,16 @@ public class UserCustomDaoImpl extends QuerydslRepositorySupport implements User
 		JPQLQuery<LoginInfo> query = from(user)
 				.innerJoin(userDetail)
 				.on(user.userId.eq(userDetail.userId))
+				.innerJoin(common)
+				.on(common.comCd.eq(userDetail.cateId))
 				.select(Projections.constructor(LoginInfo.class, 
 						user.userId,
 						user.userName,
 						user.userImg,
-						userDetail.cateId))
-				.where(user.userId.eq(userDetail.userId));
+						userDetail.cateId,
+						common.comName))
+				.where(user.userId.eq(pUser.getUserId()))
+				.where(common.groupCd.eq("TASTES"));
 		
 		return query.fetch();
 	}

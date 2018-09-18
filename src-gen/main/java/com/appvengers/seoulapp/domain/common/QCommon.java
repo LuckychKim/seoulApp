@@ -12,8 +12,8 @@ import com.querydsl.core.types.Path;
 /**
  * QCommon is a Querydsl query type for Common
  */
-@Generated("com.querydsl.codegen.EmbeddableSerializer")
-public class QCommon extends BeanPath<Common> {
+@Generated("com.querydsl.codegen.EntitySerializer")
+public class QCommon extends EntityPathBase<Common> {
 
     private static final long serialVersionUID = -624242879L;
 

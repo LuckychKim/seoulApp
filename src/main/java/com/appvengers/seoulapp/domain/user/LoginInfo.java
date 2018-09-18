@@ -1,5 +1,7 @@
 package com.appvengers.seoulapp.domain.user;
 
+import java.time.LocalDate;
+
 import javax.persistence.Embeddable;
 
 import lombok.Data;
@@ -12,20 +14,27 @@ public class LoginInfo {
 	private String userName;
 	private String userImg;
 	private String cateId;
-	private String regDt;
-	private String updDt;
+	private String comName;
+	private LocalDate regDt;
+	private LocalDate updDt;
 	
-	public LoginInfo(String userId, String userName, String userImg, String cateId) {
+	public LoginInfo() {
+		
+	}
+	public LoginInfo(String userId, String userName, String userImg, String cateId, String comName) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userImg = userImg;
 		this.cateId = cateId;
+		this.comName = comName;
 	}
 	
-	public LoginInfo(String userId, String userName, String userImg, String regDt, String updDt) {
+	public LoginInfo(String userId, String userName, String userImg, String cateId, String comName, LocalDate regDt, LocalDate updDt) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userImg = userImg;
+		this.cateId = cateId;
+		this.comName = comName;
 		this.regDt = regDt;
 		this.updDt = updDt;
 	}

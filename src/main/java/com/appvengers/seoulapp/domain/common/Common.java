@@ -1,6 +1,8 @@
 package com.appvengers.seoulapp.domain.common;
 
-import javax.persistence.Embeddable;
+import java.io.Serializable;
+
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
@@ -8,9 +10,11 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Data
-@Embeddable
+@Entity
 @Table(name = "PUBLIC_CODE_MAS")
-public class Common {
+public class Common implements Serializable{
+	
+	private static final long serialVersionUID = -3777937207533558441L;
 	
 	@Id
 	private String groupCd;

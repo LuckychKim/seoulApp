@@ -21,9 +21,11 @@ public class QLoginInfo extends BeanPath<LoginInfo> {
 
     public final StringPath cateId = createString("cateId");
 
-    public final StringPath regDt = createString("regDt");
+    public final StringPath comName = createString("comName");
 
-    public final StringPath updDt = createString("updDt");
+    public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
+
+    public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 
     public final StringPath userId = createString("userId");
 

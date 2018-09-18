@@ -1,5 +1,6 @@
 package com.appvengers.seoulapp.domain.user;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,25 +12,22 @@ public class UserService {
 	@Autowired
 	UserDao userDao;
 	
-	public boolean loginOrJoin() {
+	public List<LoginInfo> loginOrJoin(User pUser) {
 		
-		List<String> findUser = userDao.findAllUserName();
-		for(String userName : findUser) {
-			System.out.println(userName);
+		List<LoginInfo> loginInfoList = userDao.findAllLoginInfoByUserId(pUser);
+		
+		if(loginInfoList.isEmpty()) {
+			LoginInfo loginInfo = new LoginInfo();
+			loginInfo.setUserId(pUser.getUserId());
+			loginInfo.setUserName(pUser.getUserName());
+			loginInfo.setUserImg(pUser.getUserImg());
+			loginInfo.setRegDt(LocalDate.now());
+			loginInfo.setUpdDt(LocalDate.now());
+			
+			userDao.save(pUser);
+			loginInfoList.add(loginInfo);
 		}
 		
-		List<LoginInfo> loginInfoList = userDao.findAllUser();
-		
-//		User findUser = userRepository.findByUserId(user.getUserId());
-//		Optional<User> findUser2 = userRepository.findById(user.getUserId());
-//		findUser2.get().getUserId();
-	/*	if(findUser == null) {
-			user.setRegDt(LocalDate.now());
-			user.setUpdDt(LocalDate.now());
-			userRepository.save(user);
-		}
-		*/
-//		return (findUser == null) ? false : true;
-		return true;
+		return loginInfoList;
 	}
 }
