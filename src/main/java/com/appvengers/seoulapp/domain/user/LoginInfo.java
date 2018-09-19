@@ -19,7 +19,7 @@ public class LoginInfo {
 	private LocalDate updDt;
 	
 	public LoginInfo() {
-		
+		super();
 	}
 	public LoginInfo(String userId, String userName, String userImg, String cateId, String comName) {
 		this.userId = userId;

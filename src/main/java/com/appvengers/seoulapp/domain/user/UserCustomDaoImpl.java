@@ -3,11 +3,13 @@ package com.appvengers.seoulapp.domain.user;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
+import org.springframework.stereotype.Repository;
 
 import com.appvengers.seoulapp.domain.common.QCommon;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.JPQLQuery;
 
+@Repository
 public class UserCustomDaoImpl extends QuerydslRepositorySupport implements UserCustomDao {
 
 	public UserCustomDaoImpl() {

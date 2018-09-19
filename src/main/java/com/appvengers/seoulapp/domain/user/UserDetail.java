@@ -12,11 +12,8 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "USER_DET")
-public class UserDetail implements Serializable{
+public class UserDetail implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3777937207533558441L;
 
 	@Id
