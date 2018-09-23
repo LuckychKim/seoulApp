@@ -23,6 +23,8 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath addr = createString("addr");
 
+    public final StringPath addrRepresent = createString("addrRepresent");
+
     public final StringPath bankCd = createString("bankCd");
 
     public final StringPath bankNm = createString("bankNm");

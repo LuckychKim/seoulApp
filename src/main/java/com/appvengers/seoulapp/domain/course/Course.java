@@ -31,22 +31,4 @@ public class Course implements Serializable {
 	private String courseImg3;
 	private String infoId;
 	
-	public Course() {
-		super();
-	}
-	
-	public Course(String courseId, String tourId, String courseName, String courseCont, LocalDate startTm,
-			LocalDate endTn, String courseImg1, String courseImg2, String courseImg3, String infoId) {
-		super();
-		this.courseId = courseId;
-		this.tourId = tourId;
-		this.courseName = courseName;
-		this.courseCont = courseCont;
-		this.startTm = startTm;
-		this.endTn = endTn;
-		this.courseImg1 = courseImg1;
-		this.courseImg2 = courseImg2;
-		this.courseImg3 = courseImg3;
-		this.infoId = infoId;
-	}
 }

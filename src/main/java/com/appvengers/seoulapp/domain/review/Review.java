@@ -23,20 +23,4 @@ public class Review {
 	private LocalDate regDt;
 	private LocalDate updDt;
 	
-	public Review() {
-		super();
-	}
-	
-	public Review(String reviewId, String tourId, String userID, String score, String reviewCont, LocalDate regDt,
-			LocalDate updDt) {
-		super();
-		this.reviewId = reviewId;
-		this.tourId = tourId;
-		this.userID = userID;
-		this.score = score;
-		this.reviewCont = reviewCont;
-		this.regDt = regDt;
-		this.updDt = updDt;
-	}
-	
 }

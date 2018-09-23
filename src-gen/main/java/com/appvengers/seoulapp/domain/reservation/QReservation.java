@@ -21,7 +21,7 @@ public class QReservation extends EntityPathBase<Reservation> {
 
     public final StringPath bookId = createString("bookId");
 
-    public final BooleanPath confYn = createBoolean("confYn");
+    public final NumberPath<Integer> confYn = createNumber("confYn", Integer.class);
 
     public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
 
