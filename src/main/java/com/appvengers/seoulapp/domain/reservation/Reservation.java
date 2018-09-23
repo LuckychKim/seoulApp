@@ -18,7 +18,7 @@ public class Reservation {
 	
 	private String tourId;
 	private String userId;
-	private boolean confYn;
+	private int confYn;
 	private LocalDate regDt;
 	private LocalDate updDt;
 	
@@ -26,7 +26,7 @@ public class Reservation {
 		super();
 	}
 	
-	public Reservation(String bookId, String tourId, String userId, boolean confYn, LocalDate regDt, LocalDate updDt) {
+	public Reservation(String bookId, String tourId, String userId, int confYn, LocalDate regDt, LocalDate updDt) {
 		super();
 		this.bookId = bookId;
 		this.tourId = tourId;
