@@ -23,9 +23,11 @@ public class UserServiceImpl implements UserService {
 			loginInfo.setUserImg(pUser.getUserImg());
 			loginInfo.setRegDt(LocalDate.now());
 			loginInfo.setUpdDt(LocalDate.now());
-			
-			userDao.save(pUser);
 			loginInfoList.add(loginInfo);
+			
+			pUser.setRegDt(LocalDate.now());
+			pUser.setUpdDt(LocalDate.now());
+			userDao.save(pUser);
 		}
 		
 		return loginInfoList;
