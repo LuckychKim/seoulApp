@@ -25,12 +25,4 @@ public class Common implements Serializable{
 	
 	private String groupName;
 	private String comName;
-	
-	public Common(String groupCd, String comCd, String groupName, String comName) {
-		super();
-		this.groupCd = groupCd;
-		this.comCd = comCd;
-		this.groupName = groupName;
-		this.comName = comName;
-	}
 }

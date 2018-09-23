@@ -22,17 +22,4 @@ public class Reservation {
 	private LocalDate regDt;
 	private LocalDate updDt;
 	
-	public Reservation() {
-		super();
-	}
-	
-	public Reservation(String bookId, String tourId, String userId, int confYn, LocalDate regDt, LocalDate updDt) {
-		super();
-		this.bookId = bookId;
-		this.tourId = tourId;
-		this.userId = userId;
-		this.confYn = confYn;
-		this.regDt = regDt;
-		this.updDt = updDt;
-	}
 }

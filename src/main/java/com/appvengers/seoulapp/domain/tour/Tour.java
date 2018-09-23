@@ -28,8 +28,8 @@ public class Tour {
 	private String endDt;
 	private String tourImg;
 	private String tourCont;
-	private int minNum;
-	private int maxNum;
+	private Integer minNum;
+	private Integer maxNum;
 	private long latitude;
 	private long longitude;
 	private String addr;
