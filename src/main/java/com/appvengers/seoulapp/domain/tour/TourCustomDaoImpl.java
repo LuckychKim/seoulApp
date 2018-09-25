@@ -23,14 +23,16 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		QReservation reservation = QReservation.reservation;
 		
 		JPQLQuery<Tour> query = from(tour)
-				.innerJoin(reservation)
+				.leftJoin(reservation)
 				.on(tour.tourId.eq(reservation.tourId))
 				.groupBy(tour.tourId)
 				.select(Projections.constructor(Tour.class, 
+						tour.tourId.max().as("tourId"),
 						tour.title.max().as("title"),
 						tour.subTitle.max().as("subTitle"),
 						tour.addrRepresent.max().as("addrRepresent"),
-						tour.price.max().as("price")
+						tour.price.max().as("price"),
+						tour.tourImg.max().as("tourImg")
 						))
 				.orderBy(Wildcard.count.desc());
 		return query.fetch();

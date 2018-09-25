@@ -25,7 +25,7 @@ public class Course implements Serializable {
 	private String courseName;
 	private String courseCont;
 	private LocalDate startTm;
-	private LocalDate endTn;
+	private LocalDate endTm;
 	private String courseImg1;
 	private String courseImg2;
 	private String courseImg3;

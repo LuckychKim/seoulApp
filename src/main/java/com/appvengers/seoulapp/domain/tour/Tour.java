@@ -47,4 +47,16 @@ public class Tour {
 	private Integer price;
 	private LocalDate regDt;
 	private LocalDate updDt;
+	
+	public Tour(String tourId, String title, String subTitle, String addrRepresent, Integer price, String tourImg) {
+		super();
+		this.tourId = tourId;
+		this.title = title;
+		this.subTitle = subTitle;
+		this.tourImg = tourImg;
+		this.addrRepresent = addrRepresent;
+		this.price = price;
+	}
+	
+	
 }
