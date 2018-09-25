@@ -5,4 +5,5 @@ import java.util.List;
 public interface TourCustomDao {
 
 	public List<Tour> findPopularList();
+	public List<Tour> findRecommendTourList();
 }

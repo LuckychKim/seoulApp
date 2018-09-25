@@ -17,4 +17,10 @@ public class TourServiceImpl implements TourService{
 		return tourDao.findPopularList();
 	}
 
+	@Override
+	public List<Tour> retrieveRecommendTourList() {
+		// TODO Auto-generated method stub
+		return tourDao.findRecommendTourList();
+	}
+
 }

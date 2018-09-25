@@ -22,4 +22,9 @@ public class TourController {
 	public List<Tour> retrievePopularTourList() {
 		return tourService.retrievePopularTourList();
 	}
+	
+	@PostMapping("/retrieveRecommendTourList")
+	public List<Tour> retrieveRecommendTourList() {
+		return tourService.retrieveRecommendTourList();
+	}
 }

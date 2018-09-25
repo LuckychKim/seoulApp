@@ -38,4 +38,24 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		return query.fetch();
 	}
 
+	@Override
+	public List<Tour> findRecommendTourList() {
+		QTour tour = QTour.tour;
+		QTourDetail tourDetail = QTourDetail.tourDetail;
+		
+		JPQLQuery<Tour> query = from(tour)
+				.leftJoin(tourDetail)
+				.on(tour.tourId.eq(tourDetail.tourId))
+				.groupBy(tour.tourId)
+				.select(Projections.constructor(Tour.class, 
+						tour.tourId.max().as("tourId"),
+						tour.title.max().as("title"),
+						tour.subTitle.max().as("subTitle"),
+						tour.addrRepresent.max().as("addrRepresent"),
+						tour.price.max().as("price"),
+						tour.tourImg.max().as("tourImg")
+						));
+		return query.fetch();
+	}
+
 }
