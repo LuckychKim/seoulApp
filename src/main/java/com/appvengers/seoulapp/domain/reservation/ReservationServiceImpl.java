@@ -4,7 +4,6 @@ import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -27,9 +26,21 @@ public class ReservationServiceImpl implements ReservationService {
 
 	@Override
 	public boolean updateReservation( Reservation reservation ) {
-		reservation.setUpdDt(LocalDate.now());
-		Reservation isSuccess = reservationDao.save(reservation);
-		return isSuccess != null ? true : false;
+		
+		return reservationDao.updateReservation(reservation);
+	}
+
+	@Override
+	public boolean deleteReservation(String bookId) {
+		boolean isDeleted = false;
+		
+		try {
+			reservationDao.deleteById(bookId);
+			isDeleted = true;
+		} catch(Exception e) {
+			throw e;
+		}
+		return isDeleted;
 	}
 
 }

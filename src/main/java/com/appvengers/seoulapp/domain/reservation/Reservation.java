@@ -18,7 +18,7 @@ public class Reservation {
 	
 	private String tourId;
 	private String userId;
-	private int confYn;
+	private String confYn;
 	private LocalDate regDt;
 	private LocalDate updDt;
 	

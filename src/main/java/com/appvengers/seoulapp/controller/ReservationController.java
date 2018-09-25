@@ -33,4 +33,10 @@ public class ReservationController {
 		
 		return reservationService.updateReservation(reservation);
 	}
+	
+	@PostMapping("deleteReservation")
+	public boolean deleteReservation( String bookId ) {
+		
+		return reservationService.deleteReservation(bookId);
+	}
 }
