@@ -7,7 +7,6 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.querydsl.jpa.impl.JPAUpdateClause;
 
@@ -22,7 +21,6 @@ public class ReservationCustomDaoImpl extends QuerydslRepositorySupport implemen
 	}
 
 	@Override
-	@Transactional
 	public boolean updateReservation(Reservation reservation) {
 		QReservation qReserv = QReservation.reservation;
 		

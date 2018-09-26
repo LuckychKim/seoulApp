@@ -35,9 +35,13 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final StringPath infoId = createString("infoId");
 
+    public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
+
     public final DatePath<java.time.LocalDate> startTm = createDate("startTm", java.time.LocalDate.class);
 
     public final StringPath tourId = createString("tourId");
+
+    public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 
     public QCourse(String variable) {
         super(Course.class, forVariable(variable));

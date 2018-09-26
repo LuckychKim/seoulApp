@@ -27,19 +27,19 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath bankCd = createString("bankCd");
 
-    public final StringPath bankNm = createString("bankNm");
+    public final StringPath bankNo = createString("bankNo");
 
     public final StringPath endDt = createString("endDt");
 
     public final NumberPath<Long> latitude = createNumber("latitude", Long.class);
 
-    public final DatePath<java.time.LocalDate> leadTm = createDate("leadTm", java.time.LocalDate.class);
+    public final StringPath leadTm = createString("leadTm");
 
     public final NumberPath<Long> longitude = createNumber("longitude", Long.class);
 
     public final NumberPath<Integer> maxNum = createNumber("maxNum", Integer.class);
 
-    public final DatePath<java.time.LocalDate> meetTm = createDate("meetTm", java.time.LocalDate.class);
+    public final StringPath meetTm = createString("meetTm");
 
     public final NumberPath<Integer> minNum = createNumber("minNum", Integer.class);
 

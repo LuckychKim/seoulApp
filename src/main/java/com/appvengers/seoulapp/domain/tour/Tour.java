@@ -7,7 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
@@ -18,11 +20,7 @@ public class Tour {
 	private String tourId;
 	
 	private String userId;
-	
-	@NonNull
 	private String title;
-	
-	@NonNull
 	private String subTitle;
 	private String startDt;
 	private String endDt;
@@ -30,20 +28,16 @@ public class Tour {
 	private String tourCont;
 	private Integer minNum;
 	private Integer maxNum;
-	private long latitude;
-	private long longitude;
+	private Long latitude;
+	private Long longitude;
 	private String addr;
-	
-	@NonNull
 	private String addrRepresent;
-	private LocalDate meetTm;
-	private LocalDate leadTm;
+	private String meetTm;
+	private String leadTm;
 	private String tel;
 	private String acntNm;
 	private String bankCd;
-	private String bankNm;
-	
-	@NonNull
+	private String bankNo;
 	private Integer price;
 	private LocalDate regDt;
 	private LocalDate updDt;
@@ -55,6 +49,32 @@ public class Tour {
 		this.subTitle = subTitle;
 		this.tourImg = tourImg;
 		this.addrRepresent = addrRepresent;
+		this.price = price;
+	}
+
+	public Tour(String tourId, String userId, String title, String subTitle, String startDt, String tourImg,
+			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
+			String addrRepresent, String meetTm, String leadTm, String tel, String acntNm, String bankNo,
+			Integer price) {
+		super();
+		this.tourId = tourId;
+		this.userId = userId;
+		this.title = title;
+		this.subTitle = subTitle;
+		this.startDt = startDt;
+		this.tourImg = tourImg;
+		this.tourCont = tourCont;
+		this.minNum = minNum;
+		this.maxNum = maxNum;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.addr = addr;
+		this.addrRepresent = addrRepresent;
+		this.meetTm = meetTm;
+		this.leadTm = leadTm;
+		this.tel = tel;
+		this.acntNm = acntNm;
+		this.bankNo = bankNo;
 		this.price = price;
 	}
 	

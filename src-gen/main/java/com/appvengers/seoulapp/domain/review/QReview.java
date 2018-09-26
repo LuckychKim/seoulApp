@@ -31,7 +31,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 
-    public final StringPath userID = createString("userID");
+    public final StringPath userId = createString("userId");
 
     public QReview(String variable) {
         super(Review.class, forVariable(variable));

@@ -1,5 +1,7 @@
 package com.appvengers.seoulapp.domain.course;
 
-public interface CourseDao{
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CourseDao extends JpaRepository<Course, CoursePK>, CourseCustomDao{
 
 }

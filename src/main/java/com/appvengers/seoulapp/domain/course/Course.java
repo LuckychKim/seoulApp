@@ -1,10 +1,10 @@
 package com.appvengers.seoulapp.domain.course;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -12,10 +12,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "COURSE_MAS")
-public class Course implements Serializable {
+@IdClass(CoursePK.class)
+public class Course {
 
-	private static final long serialVersionUID = -3777937207533558441L;
-	
 	@Id
 	private String courseId;
 	
@@ -30,5 +29,6 @@ public class Course implements Serializable {
 	private String courseImg2;
 	private String courseImg3;
 	private String infoId;
-	
+	private LocalDate regDt;
+	private LocalDate updDt;
 }

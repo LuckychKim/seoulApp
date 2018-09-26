@@ -17,7 +17,7 @@ public class Review {
 	private String reviewId;
 	
 	private String tourId;
-	private String userID;
+	private String userId;
 	private String score;
 	private String reviewCont;
 	private LocalDate regDt;
