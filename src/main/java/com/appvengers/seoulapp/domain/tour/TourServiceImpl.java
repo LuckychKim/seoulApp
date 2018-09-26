@@ -63,5 +63,4 @@ public class TourServiceImpl implements TourService{
 		// TODO Auto-generated method stub
 		return tourDao.findRecommendTourList();
 	}
-
 }
