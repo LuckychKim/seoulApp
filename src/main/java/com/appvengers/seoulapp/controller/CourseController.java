@@ -18,7 +18,7 @@ public class CourseController {
 	CourseService courseService;
 	
 	@PostMapping("/retrieveCourse")
-	public Course retrieveCourseById( CoursePK coursePK ) {
+	public Course retrieveCourseById( @RequestBody CoursePK coursePK ) {
 		
 		return courseService.retrieveCourseById(coursePK);
 	}

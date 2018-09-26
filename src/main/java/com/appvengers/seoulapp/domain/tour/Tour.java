@@ -7,9 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
@@ -33,6 +30,7 @@ public class Tour {
 	private String addr;
 	private String addrRepresent;
 	private String meetTm;
+	private String finishTm;
 	private String leadTm;
 	private String tel;
 	private String acntNm;
@@ -54,7 +52,7 @@ public class Tour {
 
 	public Tour(String tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
-			String addrRepresent, String meetTm, String leadTm, String tel, String acntNm, String bankNo,
+			String addrRepresent, String meetTm, String finishTm, String leadTm, String tel, String acntNm, String bankNo,
 			Integer price) {
 		super();
 		this.tourId = tourId;
@@ -71,6 +69,7 @@ public class Tour {
 		this.addr = addr;
 		this.addrRepresent = addrRepresent;
 		this.meetTm = meetTm;
+		this.finishTm = finishTm;
 		this.leadTm = leadTm;
 		this.tel = tel;
 		this.acntNm = acntNm;

@@ -23,8 +23,8 @@ public class Course {
 	
 	private String courseName;
 	private String courseCont;
-	private LocalDate startTm;
-	private LocalDate endTm;
+	private String startTm;
+	private String endTm;
 	private String courseImg1;
 	private String courseImg2;
 	private String courseImg3;

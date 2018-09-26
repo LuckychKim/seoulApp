@@ -70,6 +70,7 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 						tour.addr,
 						tour.addrRepresent,
 						tour.meetTm,
+						tour.finishTm,
 						tour.leadTm,
 						tour.tel,
 						tour.acntNm,
@@ -131,6 +132,9 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		}
 		if(tour.getMeetTm() != null) {
 			updateClause.set(qTour.meetTm, tour.getMeetTm());
+		}
+		if(tour.getFinishTm() != null) {
+			updateClause.set(qTour.finishTm, tour.getFinishTm());
 		}
 		if(tour.getTel() != null) {
 			updateClause.set(qTour.tel, tour.getTel());

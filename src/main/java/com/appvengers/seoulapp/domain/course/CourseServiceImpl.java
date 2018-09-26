@@ -16,9 +16,8 @@ public class CourseServiceImpl implements CourseService{
 	
 	@Override
 	public Course retrieveCourseById(CoursePK coursePK) {
-//		return courseDao.findOne(coursePK).get();
 		
-		return null;
+		return courseDao.findById(coursePK).get();
 	}
 
 	@Override

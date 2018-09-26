@@ -31,13 +31,13 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final StringPath courseName = createString("courseName");
 
-    public final DatePath<java.time.LocalDate> endTm = createDate("endTm", java.time.LocalDate.class);
+    public final StringPath endTm = createString("endTm");
 
     public final StringPath infoId = createString("infoId");
 
     public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
 
-    public final DatePath<java.time.LocalDate> startTm = createDate("startTm", java.time.LocalDate.class);
+    public final StringPath startTm = createString("startTm");
 
     public final StringPath tourId = createString("tourId");
 

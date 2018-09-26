@@ -42,6 +42,9 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     public final StringPath endDt = _super.endDt;
 
     //inherited
+    public final StringPath finishTm = _super.finishTm;
+
+    //inherited
     public final NumberPath<Long> latitude = _super.latitude;
 
     //inherited
