@@ -55,7 +55,6 @@ public class TourController {
 		return tourService.deleteTour(tourId);
 	}
 	
-	
 	@PostMapping("/retrieveRecommendTourList")
 	public List<Tour> retrieveRecommendTourList() {
 		return tourService.retrieveRecommendTourList();
