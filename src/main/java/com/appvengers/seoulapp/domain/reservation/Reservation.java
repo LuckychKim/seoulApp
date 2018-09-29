@@ -14,9 +14,9 @@ import lombok.Data;
 public class Reservation {
 	
 	@Id
-	private String bookId;
+	private Integer bookId;
 	
-	private String tourId;
+	private Integer tourId;
 	private String userId;
 	private String confYn;
 	private LocalDate regDt;

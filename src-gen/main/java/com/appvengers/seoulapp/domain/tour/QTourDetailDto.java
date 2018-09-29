@@ -84,7 +84,7 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     public final StringPath tourCont = _super.tourCont;
 
     //inherited
-    public final StringPath tourId = _super.tourId;
+    public final NumberPath<Integer> tourId = _super.tourId;
 
     //inherited
     public final StringPath tourImg = _super.tourImg;

@@ -12,7 +12,7 @@ public class TourDetailDto extends Tour {
 	
 	private String comName;
 
-	public TourDetailDto(String tourId, String userId, String title, String subTitle, String startDt, String tourImg,
+	public TourDetailDto(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
 			String addrRepresent, String meetTm, String finishTm, String leadTm, String tel, String acntNm, String bankNo,
 			Integer price, String comName) {

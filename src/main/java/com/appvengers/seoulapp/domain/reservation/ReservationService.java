@@ -2,8 +2,8 @@ package com.appvengers.seoulapp.domain.reservation;
 
 public interface ReservationService {
 
-	public Reservation retrieveReservationById( String bookId );
+	public Reservation retrieveReservationById( int bookId );
 	public boolean insertReservation( Reservation reservation );
 	public boolean updateReservation( Reservation reservation );
-	public boolean deleteReservation( String bookId );
+	public boolean deleteReservation( int bookId );
 }

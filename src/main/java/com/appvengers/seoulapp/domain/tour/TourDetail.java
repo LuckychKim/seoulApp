@@ -16,7 +16,7 @@ public class TourDetail implements Serializable {
 	private static final long serialVersionUID = -3777937207533558441L;
 	
 	@Id
-	private String tourId;
+	private Integer tourId;
 	
 	@Id
 	private String comCd;
@@ -24,7 +24,7 @@ public class TourDetail implements Serializable {
 	public TourDetail() {
 		super();
 	}
-	public TourDetail(String tourId, String comCd) {
+	public TourDetail(Integer tourId, String comCd) {
 		super();
 		this.tourId = tourId;
 		this.comCd = comCd;

@@ -59,7 +59,7 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath tourCont = createString("tourCont");
 
-    public final StringPath tourId = createString("tourId");
+    public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
     public final StringPath tourImg = createString("tourImg");
 

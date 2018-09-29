@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,8 +31,8 @@ public class TourController {
 		return tourService.retrieveTourDetailInfo();
 	}
 	
-	@GetMapping("/retrieveTour")
-	public Tour retrieveTourById( String tourId ) {
+	@GetMapping("/retrieveTour/{tourId}")
+	public Tour retrieveTourById(@PathVariable int tourId ) {
 		
 		return tourService.retrieveTourById(tourId);
 	}
@@ -49,7 +50,7 @@ public class TourController {
 	}
 	
 	@PostMapping("deleteTour")
-	public boolean deleteTour( String tourId ) {
+	public boolean deleteTour( int tourId ) {
 		
 		return tourService.deleteTour(tourId);
 	}

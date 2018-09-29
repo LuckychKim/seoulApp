@@ -12,7 +12,7 @@ public class ReservationServiceImpl implements ReservationService {
 	ReservationDao reservationDao;
 	
 	@Override
-	public Reservation retrieveReservationById( String bookId ) {
+	public Reservation retrieveReservationById( int bookId ) {
 		return reservationDao.findById(bookId).get();
 	}
 	
@@ -21,7 +21,7 @@ public class ReservationServiceImpl implements ReservationService {
 		reservation.setRegDt(LocalDate.now());
 		reservation.setUpdDt(LocalDate.now());
 		Reservation isSuccess = reservationDao.save(reservation);
-		return isSuccess != null ? true : false;
+		return isSuccess != null;
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class ReservationServiceImpl implements ReservationService {
 	}
 
 	@Override
-	public boolean deleteReservation(String bookId) {
+	public boolean deleteReservation(int bookId) {
 		boolean isDeleted = false;
 		
 		try {

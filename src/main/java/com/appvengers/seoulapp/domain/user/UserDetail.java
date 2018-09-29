@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
@@ -12,6 +13,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "USER_DET")
+@IdClass(UserDetail.class)
 public class UserDetail implements Serializable {
 
 	private static final long serialVersionUID = -3777937207533558441L;

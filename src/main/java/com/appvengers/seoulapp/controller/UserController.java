@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.appvengers.seoulapp.domain.user.LoginInfo;
 import com.appvengers.seoulapp.domain.user.User;
+import com.appvengers.seoulapp.domain.user.UserDetail;
 import com.appvengers.seoulapp.domain.user.UserService;
 
 @RestController
@@ -31,9 +32,27 @@ public class UserController {
 	}
 	
 	@PostMapping("deleteUser")
-	public boolean deleteUser( int userId ) {
+	public boolean deleteUser( String userId ) {
 		
 		return userService.deleteUser( userId );
+	}
+	
+	@PostMapping("/retrieveUserDetail")
+	public UserDetail retrieveUserDetailById( @RequestBody UserDetail userDetail ) {
+		
+		return userService.retrieveUserDetailById( userDetail );
+	}
+	
+	@PostMapping("/insertUserDetail")
+	public boolean insertUserDetail( @RequestBody UserDetail userDetail ) {
+		
+		return userService.insertUserDetail(userDetail);
+	}
+	
+	@PostMapping("deleteUserDetail")
+	public boolean deleteUserDetail( @RequestBody UserDetail userDetail ) {
+		
+		return userService.deleteUserDetail( userDetail );
 	}
 
 }

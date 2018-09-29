@@ -27,7 +27,7 @@ public class TourServiceImpl implements TourService{
 	}
 
 	@Override
-	public Tour retrieveTourById(String tourId) {
+	public Tour retrieveTourById(int tourId) {
 		return tourDao.findById(tourId).get();
 	}
 
@@ -46,7 +46,7 @@ public class TourServiceImpl implements TourService{
 	}
 
 	@Override
-	public boolean deleteTour(String tourId) {
+	public boolean deleteTour(int tourId) {
 		boolean isDeleted = false;
 		
 		try {

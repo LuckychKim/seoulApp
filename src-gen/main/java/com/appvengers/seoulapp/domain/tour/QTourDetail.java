@@ -21,7 +21,7 @@ public class QTourDetail extends EntityPathBase<TourDetail> {
 
     public final StringPath comCd = createString("comCd");
 
-    public final StringPath tourId = createString("tourId");
+    public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
     public QTourDetail(String variable) {
         super(TourDetail.class, forVariable(variable));

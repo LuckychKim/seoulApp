@@ -12,6 +12,9 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
 	
+	@Autowired
+	UserDetailDao userDetailDao;
+	
 	public List<LoginInfo> loginOrJoin(User pUser) {
 		
 		List<LoginInfo> loginInfoList = userDao.findAllLoginInfoByUserId(pUser);
@@ -39,11 +42,36 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean deleteUser( int userId ) {
+	public boolean deleteUser( String userId ) {
 		boolean isDeleted = false;
 		
 		try {
 			userDao.deleteById( userId );
+			isDeleted = true;
+		} catch(Exception e) {
+			throw e;
+		}
+		return isDeleted;
+	}
+
+	@Override
+	public UserDetail retrieveUserDetailById(UserDetail userDetail) {
+		
+		return userDetailDao.findById(userDetail).get();
+	}
+
+	@Override
+	public boolean insertUserDetail(UserDetail userDetail) {
+		
+		return userDetailDao.save(userDetail) != null;
+	}
+
+	@Override
+	public boolean deleteUserDetail(UserDetail userDetail) {
+		boolean isDeleted = false;
+		
+		try {
+			userDetailDao.deleteById(userDetail);
 			isDeleted = true;
 		} catch(Exception e) {
 			throw e;

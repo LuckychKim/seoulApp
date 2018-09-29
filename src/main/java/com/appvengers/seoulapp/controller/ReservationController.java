@@ -17,7 +17,7 @@ public class ReservationController {
 	ReservationService reservationService;
 	
 	@PostMapping("/retrieveReservation")
-	public Reservation retrieveReservationById( String bookId ) {
+	public Reservation retrieveReservationById( int bookId ) {
 		
 		return reservationService.retrieveReservationById(bookId);
 	}
@@ -35,7 +35,7 @@ public class ReservationController {
 	}
 	
 	@PostMapping("deleteReservation")
-	public boolean deleteReservation( String bookId ) {
+	public boolean deleteReservation( int bookId ) {
 		
 		return reservationService.deleteReservation(bookId);
 	}

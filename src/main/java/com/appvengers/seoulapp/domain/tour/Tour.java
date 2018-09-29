@@ -14,7 +14,7 @@ import lombok.Data;
 public class Tour {
 
 	@Id
-	private String tourId;
+	private Integer tourId;
 	
 	private String userId;
 	private String title;
@@ -40,7 +40,7 @@ public class Tour {
 	private LocalDate regDt;
 	private LocalDate updDt;
 	
-	public Tour(String tourId, String title, String subTitle, String addrRepresent, Integer price, String tourImg) {
+	public Tour(Integer tourId, String title, String subTitle, String addrRepresent, Integer price, String tourImg) {
 		super();
 		this.tourId = tourId;
 		this.title = title;
@@ -50,7 +50,7 @@ public class Tour {
 		this.price = price;
 	}
 
-	public Tour(String tourId, String userId, String title, String subTitle, String startDt, String tourImg,
+	public Tour(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
 			String addrRepresent, String meetTm, String finishTm, String leadTm, String tel, String acntNm, String bankNo,
 			Integer price) {

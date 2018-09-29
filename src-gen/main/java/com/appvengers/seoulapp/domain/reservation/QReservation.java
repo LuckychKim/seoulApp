@@ -19,13 +19,13 @@ public class QReservation extends EntityPathBase<Reservation> {
 
     public static final QReservation reservation = new QReservation("reservation");
 
-    public final StringPath bookId = createString("bookId");
+    public final NumberPath<Integer> bookId = createNumber("bookId", Integer.class);
 
     public final StringPath confYn = createString("confYn");
 
     public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
 
-    public final StringPath tourId = createString("tourId");
+    public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
     public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 
