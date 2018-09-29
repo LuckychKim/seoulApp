@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.tour;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -121,6 +122,7 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	@Override
 	public boolean updateTour(Tour tour) {
 		QTour qTour = QTour.tour;
+		Date now = new Date();
 		
 		JPAUpdateClause updateClause = new JPAUpdateClause(em, qTour);
 		
@@ -188,11 +190,11 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 			updateClause.set(qTour.price, tour.getPrice());
 		}
 				
-		updateClause.set(qTour.regDt, LocalDate.now())
+		updateClause.set(qTour.regDt, now)
 				.where(qTour.tourId.eq(tour.getTourId()));
 		
 		long successCnt = updateClause.execute();
-		return successCnt > 0 ? true : false;
+		return successCnt > 0;
 	}
 
 	@Override

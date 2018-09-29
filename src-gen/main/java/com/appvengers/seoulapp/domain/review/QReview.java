@@ -19,7 +19,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public static final QReview review = new QReview("review");
 
-    public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> regDt = createDateTime("regDt", java.util.Date.class);
 
     public final StringPath reviewCont = createString("reviewCont");
 
@@ -29,7 +29,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
-    public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> updDt = createDateTime("updDt", java.util.Date.class);
 
     public final StringPath userId = createString("userId");
 

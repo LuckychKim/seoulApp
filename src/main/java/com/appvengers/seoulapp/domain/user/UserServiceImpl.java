@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.user;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,17 @@ public class UserServiceImpl implements UserService {
 		List<LoginInfo> loginInfoList = userDao.findAllLoginInfoByUserId(pUser);
 		
 		if(loginInfoList.isEmpty()) {
+			Date now = new Date();
 			LoginInfo loginInfo = new LoginInfo();
 			loginInfo.setUserId(pUser.getUserId());
 			loginInfo.setUserName(pUser.getUserName());
 			loginInfo.setUserImg(pUser.getUserImg());
-			loginInfo.setRegDt(null);
-			loginInfo.setUpdDt(null);
+			loginInfo.setRegDt(now);
+			loginInfo.setUpdDt(now);
 			loginInfoList.add(loginInfo);
 			
-			pUser.setRegDt(LocalDate.now());
-			pUser.setUpdDt(LocalDate.now());
+			pUser.setRegDt(now);
+			pUser.setUpdDt(now);
 			userDao.save(pUser);
 		}
 		

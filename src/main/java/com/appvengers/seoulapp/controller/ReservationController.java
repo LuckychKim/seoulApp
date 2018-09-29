@@ -1,6 +1,8 @@
 package com.appvengers.seoulapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +18,8 @@ public class ReservationController {
 	@Autowired
 	ReservationService reservationService;
 	
-	@PostMapping("/retrieveReservation")
-	public Reservation retrieveReservationById( int bookId ) {
+	@GetMapping("/retrieveReservation/{bookId}")
+	public Reservation retrieveReservationById( @PathVariable int bookId ) {
 		
 		return reservationService.retrieveReservationById(bookId);
 	}

@@ -1,6 +1,6 @@
 package com.appvengers.seoulapp.domain.review;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,6 +23,7 @@ public class ReviewCustomDaoImpl extends QuerydslRepositorySupport implements Re
 	@Override
 	public boolean updateReview(Review review) {
 		QReview qReview = QReview.review;
+		Date now = new Date();
 		
 		JPAUpdateClause updateClause = new JPAUpdateClause(em, qReview);
 		
@@ -39,7 +40,7 @@ public class ReviewCustomDaoImpl extends QuerydslRepositorySupport implements Re
 			updateClause.set(qReview.reviewCont, review.getReviewCont());
 		}
 				
-		updateClause.set(qReview.regDt, LocalDate.now())
+		updateClause.set(qReview.regDt, now)
 				.where(qReview.reviewId.eq(review.getReviewId()));
 		
 		long successCnt = updateClause.execute();

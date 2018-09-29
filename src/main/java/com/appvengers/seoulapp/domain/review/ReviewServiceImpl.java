@@ -1,12 +1,9 @@
 package com.appvengers.seoulapp.domain.review;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.appvengers.seoulapp.domain.review.Review;
-import com.appvengers.seoulapp.domain.review.ReviewDao;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
@@ -21,10 +18,11 @@ public class ReviewServiceImpl implements ReviewService {
 
 	@Override
 	public boolean insertReview(Review review) {
-		review.setRegDt(LocalDate.now());
-		review.setUpdDt(LocalDate.now());
+		Date now = new Date();
+		review.setRegDt(now);
+		review.setUpdDt(now);
 		Review isSuccess = reviewDao.save(review);
-		return isSuccess != null ? true : false;
+		return isSuccess != null;
 	}
 
 	@Override

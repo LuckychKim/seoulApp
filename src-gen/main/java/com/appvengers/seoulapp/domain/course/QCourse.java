@@ -35,13 +35,13 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final StringPath infoId = createString("infoId");
 
-    public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> regDt = createDateTime("regDt", java.util.Date.class);
 
     public final StringPath startTm = createString("startTm");
 
     public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
-    public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> updDt = createDateTime("updDt", java.util.Date.class);
 
     public QCourse(String variable) {
         super(Course.class, forVariable(variable));

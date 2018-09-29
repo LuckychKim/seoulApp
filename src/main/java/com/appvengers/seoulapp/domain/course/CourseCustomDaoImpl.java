@@ -1,6 +1,6 @@
 package com.appvengers.seoulapp.domain.course;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,6 +23,7 @@ public class CourseCustomDaoImpl extends QuerydslRepositorySupport implements Co
 	@Override
 	public boolean updateCourse(Course course) {
 		QCourse qCourse = QCourse.course;
+		Date now = new Date();
 		
 		JPAUpdateClause updateClause = new JPAUpdateClause(em, qCourse);
 		
@@ -51,7 +52,7 @@ public class CourseCustomDaoImpl extends QuerydslRepositorySupport implements Co
 			updateClause.set(qCourse.infoId, course.getInfoId());
 		}
 				
-		updateClause.set(qCourse.regDt, LocalDate.now())
+		updateClause.set(qCourse.regDt, now)
 				.where(qCourse.courseId.eq(course.getCourseId()))
 				.where(qCourse.tourId.eq(course.getTourId()));
 		

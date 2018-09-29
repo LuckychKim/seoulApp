@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.course;
 
-import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,9 @@ public class CourseServiceImpl implements CourseService{
 
 	@Override
 	public boolean insertCourse(Course course) {
-		course.setRegDt(LocalDate.now());
-		course.setUpdDt(LocalDate.now());
+		Date now = new Date();
+		course.setRegDt(now);
+		course.setUpdDt(now);
 		Course isSuccess = courseDao.save(course);
 		return isSuccess != null;
 	}
@@ -45,6 +47,11 @@ public class CourseServiceImpl implements CourseService{
 			throw e;
 		}
 		return isDeleted;
+	}
+
+	@Override
+	public List<Course> retrieveCourseListByTourId(int tourId) {
+		return courseDao.findAllByTourId(tourId);
 	}
 
 }

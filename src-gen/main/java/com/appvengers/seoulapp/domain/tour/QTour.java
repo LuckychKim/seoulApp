@@ -47,7 +47,7 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
-    public final DatePath<java.time.LocalDate> regDt = createDate("regDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> regDt = createDateTime("regDt", java.util.Date.class);
 
     public final StringPath startDt = createString("startDt");
 
@@ -63,7 +63,7 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath tourImg = createString("tourImg");
 
-    public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
+    public final DateTimePath<java.util.Date> updDt = createDateTime("updDt", java.util.Date.class);
 
     public final StringPath userId = createString("userId");
 

@@ -1,6 +1,6 @@
 package com.appvengers.seoulapp.domain.user;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -27,6 +27,7 @@ public class UserCustomDaoImpl extends QuerydslRepositorySupport implements User
 	@Override
 	public boolean updateUser(User user) {
 		QUser qUser = QUser.user;
+		Date now = new Date();
 		
 		JPAUpdateClause updateClause = new JPAUpdateClause(em, qUser);
 		
@@ -37,11 +38,11 @@ public class UserCustomDaoImpl extends QuerydslRepositorySupport implements User
 			updateClause.set(qUser.userImg, user.getUserImg());
 		}
 				
-		updateClause.set(qUser.regDt, LocalDate.now())
+		updateClause.set(qUser.regDt, now)
 				.where(qUser.userId.eq(user.getUserId()));
 		
 		long successCnt = updateClause.execute();
-		return successCnt > 0 ? true : false;
+		return successCnt > 0;
 	}
 	
 	@Override

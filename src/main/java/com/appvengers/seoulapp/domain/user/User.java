@@ -1,10 +1,13 @@
 package com.appvengers.seoulapp.domain.user;
 
-import java.time.LocalDate;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 import lombok.Data;
 
@@ -18,7 +21,13 @@ public class User{
 
 	private String userName;
 	private String userImg;
-	private LocalDate regDt;
-	private LocalDate updDt;
+	
+	@Column
+	@Type(type="date")
+	private Date regDt;
+	
+	@Column
+	@Type(type="date")
+	private Date updDt;
 	
 }

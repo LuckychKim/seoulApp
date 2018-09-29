@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.reservation;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -23,6 +24,7 @@ public class ReservationCustomDaoImpl extends QuerydslRepositorySupport implemen
 	@Override
 	public boolean updateReservation(Reservation reservation) {
 		QReservation qReserv = QReservation.reservation;
+		Date now = new Date();
 		
 		JPAUpdateClause updateClause = new JPAUpdateClause(em, qReserv);
 		
@@ -36,7 +38,7 @@ public class ReservationCustomDaoImpl extends QuerydslRepositorySupport implemen
 			updateClause.set(qReserv.confYn, reservation.getConfYn());
 		}
 				
-		updateClause.set(qReserv.regDt, LocalDate.now())
+		updateClause.set(qReserv.regDt, now)
 				.where(qReserv.bookId.eq(reservation.getBookId()));
 		
 		long successCnt = updateClause.execute();

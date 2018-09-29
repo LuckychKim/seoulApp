@@ -66,7 +66,7 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     public final NumberPath<Integer> price = _super.price;
 
     //inherited
-    public final DatePath<java.time.LocalDate> regDt = _super.regDt;
+    public final DateTimePath<java.util.Date> regDt = _super.regDt;
 
     //inherited
     public final StringPath startDt = _super.startDt;
@@ -90,7 +90,7 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     public final StringPath tourImg = _super.tourImg;
 
     //inherited
-    public final DatePath<java.time.LocalDate> updDt = _super.updDt;
+    public final DateTimePath<java.util.Date> updDt = _super.updDt;
 
     //inherited
     public final StringPath userId = _super.userId;

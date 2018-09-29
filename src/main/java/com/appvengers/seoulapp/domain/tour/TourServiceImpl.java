@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.tour;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,10 +49,11 @@ public class TourServiceImpl implements TourService{
 
 	@Override
 	public boolean insertTour(Tour tour) {
-		tour.setRegDt(LocalDate.now());
-		tour.setUpdDt(LocalDate.now());
+		Date now = new Date();
+		tour.setRegDt(now);
+		tour.setUpdDt(now);
 		Tour isSuccess = tourDao.save(tour);
-		return isSuccess != null ? true : false;
+		return isSuccess != null;
 	}
 
 	@Override

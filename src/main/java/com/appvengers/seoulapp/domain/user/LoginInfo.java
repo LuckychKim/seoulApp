@@ -1,6 +1,6 @@
 package com.appvengers.seoulapp.domain.user;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Embeddable;
 
@@ -25,7 +25,7 @@ public class LoginInfo {
 	private String cateId;
 	@NonNull
 	private String comName;
-	private LocalDate regDt;
-	private LocalDate updDt;
+	private Date regDt;
+	private Date updDt;
 	
 }

@@ -1,10 +1,13 @@
 package com.appvengers.seoulapp.domain.tour;
 
-import java.time.LocalDate;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Type;
 
 import lombok.Data;
 
@@ -37,8 +40,15 @@ public class Tour {
 	private String bankCd;
 	private String bankNo;
 	private Integer price;
-	private LocalDate regDt;
-	private LocalDate updDt;
+	
+	@Column
+	@Type(type="date")
+	private Date regDt;
+	
+	@Column
+	@Type(type="date")
+	private Date updDt;
+	
 	
 	public Tour(Integer tourId, String title, String subTitle, String addrRepresent, Integer price, String tourImg) {
 		super();
@@ -75,6 +85,10 @@ public class Tour {
 		this.acntNm = acntNm;
 		this.bankNo = bankNo;
 		this.price = price;
+	}
+
+	public Tour() {
+		super();
 	}
 	
 	
