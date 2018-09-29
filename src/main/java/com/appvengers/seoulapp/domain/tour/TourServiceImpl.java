@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.appvengers.seoulapp.domain.common.Common;
+import com.appvengers.seoulapp.domain.common.CommonService;
 import com.appvengers.seoulapp.domain.tour.Tour;
 
 @Service
@@ -13,6 +15,9 @@ public class TourServiceImpl implements TourService{
 
 	@Autowired
 	private TourDao tourDao;
+	
+	@Autowired
+	private CommonService commonService;
 	
 	@Override
 	public List<Tour> retrievePopularTourList() {
@@ -29,6 +34,11 @@ public class TourServiceImpl implements TourService{
 	@Override
 	public Tour retrieveTourById(int tourId) {
 		return tourDao.findById(tourId).get();
+	}
+	
+	@Override
+	public List<Common> retrieveTourList() {
+		return commonService.retrieveTasteList();
 	}
 
 	@Override
@@ -60,7 +70,8 @@ public class TourServiceImpl implements TourService{
 
 	@Override
 	public List<Tour> retrieveRecommendTourList() {
-		// TODO Auto-generated method stub
+		
 		return tourDao.findRecommendTourList();
 	}
+
 }

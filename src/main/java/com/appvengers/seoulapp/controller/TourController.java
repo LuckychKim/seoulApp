@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.appvengers.seoulapp.domain.common.Common;
 import com.appvengers.seoulapp.domain.tour.Tour;
 import com.appvengers.seoulapp.domain.tour.TourDetailDto;
 import com.appvengers.seoulapp.domain.tour.TourService;
@@ -35,6 +36,12 @@ public class TourController {
 	public Tour retrieveTourById(@PathVariable int tourId ) {
 		
 		return tourService.retrieveTourById(tourId);
+	}
+	
+	@GetMapping("/retrieveTourList")
+	public List<Common> retrieveTourList(){
+		
+		return tourService.retrieveTourList();
 	}
 	
 	@PostMapping("/insertTour")
