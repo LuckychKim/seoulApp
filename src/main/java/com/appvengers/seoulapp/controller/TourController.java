@@ -51,7 +51,6 @@ public class TourController {
 	
 	@GetMapping("/retrieveTourById/{tourId}")
 	public TourRequestDto retrieveTourById( @PathVariable int tourId ) {
-		
 		return tourService.retrieveTourById(tourId);
 	}
 	
