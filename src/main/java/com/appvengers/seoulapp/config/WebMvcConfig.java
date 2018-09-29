@@ -17,7 +17,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	private LogInterceptor interceptor;
 
 	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-            "classpath:/resources/", "classpath:/static/", "classpath:/public/" };
+            "classpath:/resources/", "classpath:/static/" };
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
