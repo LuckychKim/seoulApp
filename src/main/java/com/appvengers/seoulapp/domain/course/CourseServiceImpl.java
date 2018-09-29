@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.course;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,11 @@ public class CourseServiceImpl implements CourseService{
 			throw e;
 		}
 		return isDeleted;
+	}
+
+	@Override
+	public List<Course> retrieveCourseListByTourId(int tourId) {
+		return courseDao.findAllByTourId(tourId);
 	}
 
 }
