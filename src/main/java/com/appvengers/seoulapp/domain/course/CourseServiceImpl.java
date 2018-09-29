@@ -6,9 +6,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.appvengers.seoulapp.domain.course.Course;
-import com.appvengers.seoulapp.domain.course.CourseDao;
-
 @Service
 public class CourseServiceImpl implements CourseService{
 
