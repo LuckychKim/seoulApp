@@ -23,7 +23,7 @@ public class QReview extends EntityPathBase<Review> {
 
     public final StringPath reviewCont = createString("reviewCont");
 
-    public final StringPath reviewId = createString("reviewId");
+    public final NumberPath<Integer> reviewId = createNumber("reviewId", Integer.class);
 
     public final StringPath score = createString("score");
 

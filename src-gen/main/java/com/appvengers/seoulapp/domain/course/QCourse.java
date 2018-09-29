@@ -21,7 +21,7 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final StringPath courseCont = createString("courseCont");
 
-    public final StringPath courseId = createString("courseId");
+    public final NumberPath<Integer> courseId = createNumber("courseId", Integer.class);
 
     public final StringPath courseImg1 = createString("courseImg1");
 
@@ -39,7 +39,7 @@ public class QCourse extends EntityPathBase<Course> {
 
     public final StringPath startTm = createString("startTm");
 
-    public final StringPath tourId = createString("tourId");
+    public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
     public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 

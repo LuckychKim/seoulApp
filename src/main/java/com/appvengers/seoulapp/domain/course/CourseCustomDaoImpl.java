@@ -56,7 +56,7 @@ public class CourseCustomDaoImpl extends QuerydslRepositorySupport implements Co
 				.where(qCourse.tourId.eq(course.getTourId()));
 		
 		long successCnt = updateClause.execute();
-		return successCnt > 0 ? true : false;
+		return successCnt > 0;
 	}
 
 }

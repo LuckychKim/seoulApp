@@ -43,7 +43,7 @@ public class ReviewCustomDaoImpl extends QuerydslRepositorySupport implements Re
 				.where(qReview.reviewId.eq(review.getReviewId()));
 		
 		long successCnt = updateClause.execute();
-		return successCnt > 0 ? true : false;
+		return successCnt > 0;
 	}
 
 }

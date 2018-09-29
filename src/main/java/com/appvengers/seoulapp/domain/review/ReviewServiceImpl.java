@@ -15,7 +15,7 @@ public class ReviewServiceImpl implements ReviewService {
 	ReviewDao reviewDao;
 	
 	@Override
-	public Review retrieveReviewById(String reviewId) {
+	public Review retrieveReviewById(int reviewId) {
 		return reviewDao.findById(reviewId).get();
 	}
 
@@ -34,8 +34,8 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 
 	@Override
-	public boolean deleteReview(String reviewId) {
-boolean isDeleted = false;
+	public boolean deleteReview(int reviewId) {
+		boolean isDeleted = false;
 		
 		try {
 			reviewDao.deleteById(reviewId);

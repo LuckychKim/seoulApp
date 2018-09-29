@@ -4,8 +4,8 @@ import com.appvengers.seoulapp.domain.review.Review;
 
 public interface ReviewService {
 
-	public Review retrieveReviewById( String reviewId );
+	public Review retrieveReviewById( int reviewId );
 	public boolean insertReview( Review review );
 	public boolean updateReview( Review review );
-	public boolean deleteReview( String reviewId );
+	public boolean deleteReview( int reviewId );
 }

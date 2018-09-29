@@ -25,7 +25,7 @@ public class CourseServiceImpl implements CourseService{
 		course.setRegDt(LocalDate.now());
 		course.setUpdDt(LocalDate.now());
 		Course isSuccess = courseDao.save(course);
-		return isSuccess != null ? true : false;
+		return isSuccess != null;
 	}
 
 	@Override
