@@ -33,7 +33,7 @@ public class TourController {
 	}
 	
 	@GetMapping("/retrieveTour/{tourId}")
-	public Tour retrieveTourById(@PathVariable int tourId ) {
+	public Tour retrieveTourById( @PathVariable int tourId ) {
 		
 		return tourService.retrieveTourById(tourId);
 	}
@@ -42,6 +42,17 @@ public class TourController {
 	public List<Common> retrieveTourList(){
 		
 		return tourService.retrieveTourList();
+	}
+	
+	@PostMapping("/retrieveRecommendTourList")
+	public List<Tour> retrieveRecommendTourList() {
+		return tourService.retrieveRecommendTourList();
+	}
+	
+	@GetMapping("/retrieveTourListById/{tourId}")
+	public TourDetailDto retrieveTourListById( @PathVariable int tourId ) {
+		
+		return tourService.retrieveTourListById(tourId);
 	}
 	
 	@PostMapping("/insertTour")
@@ -62,8 +73,4 @@ public class TourController {
 		return tourService.deleteTour(tourId);
 	}
 	
-	@PostMapping("/retrieveRecommendTourList")
-	public List<Tour> retrieveRecommendTourList() {
-		return tourService.retrieveRecommendTourList();
-	}
 }

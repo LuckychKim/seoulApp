@@ -40,6 +40,11 @@ public class TourServiceImpl implements TourService{
 	public List<Common> retrieveTourList() {
 		return commonService.retrieveTasteList();
 	}
+	
+	@Override
+	public TourDetailDto retrieveTourListById(int tourId) {
+		return tourDao.retrieveTourListById(tourId);
+	}
 
 	@Override
 	public boolean insertTour(Tour tour) {

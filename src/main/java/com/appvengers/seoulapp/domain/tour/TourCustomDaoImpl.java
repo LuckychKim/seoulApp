@@ -81,6 +81,42 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 				.where(common.groupCd.eq("BANKCD"));
 		return query.fetch();
 	}
+	
+	@Override
+	public TourDetailDto retrieveTourListById(int tourId) {
+		QTour tour = QTour.tour;
+		QCommon common = QCommon.common;
+		
+		JPQLQuery<TourDetailDto> query = from(tour)
+				.leftJoin(common)
+				.on(tour.bankCd.eq(common.comCd))
+				.select(Projections.constructor(TourDetailDto.class, 
+						tour.tourId,
+						tour.userId,
+						tour.title,
+						tour.subTitle,
+						tour.startDt,
+						tour.tourImg,
+						tour.tourCont,
+						tour.minNum,
+						tour.maxNum,
+						tour.latitude,
+						tour.longitude,
+						tour.addr,
+						tour.addrRepresent,
+						tour.meetTm,
+						tour.finishTm,
+						tour.leadTm,
+						tour.tel,
+						tour.acntNm,
+						tour.bankNo,
+						tour.price,
+						common.comName
+						))
+				.where(common.groupCd.eq("BANKCD"))
+				.where(tour.tourId.eq(tourId));
+		return query.fetchOne();
+	}
 
 	@Override
 	public boolean updateTour(Tour tour) {
