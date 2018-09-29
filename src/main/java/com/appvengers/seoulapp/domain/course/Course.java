@@ -16,10 +16,10 @@ import lombok.Data;
 public class Course {
 
 	@Id
-	private String courseId;
+	private Integer courseId;
 	
 	@Id
-	private String tourId;
+	private Integer tourId;
 	
 	private String courseName;
 	private String courseCont;

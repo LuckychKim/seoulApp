@@ -14,9 +14,9 @@ import lombok.Data;
 public class Review {
 
 	@Id
-	private String reviewId;
+	private Integer reviewId;
 	
-	private String tourId;
+	private Integer tourId;
 	private String userId;
 	private String score;
 	private String reviewCont;

@@ -23,11 +23,11 @@ public class QReview extends EntityPathBase<Review> {
 
     public final StringPath reviewCont = createString("reviewCont");
 
-    public final StringPath reviewId = createString("reviewId");
+    public final NumberPath<Integer> reviewId = createNumber("reviewId", Integer.class);
 
     public final StringPath score = createString("score");
 
-    public final StringPath tourId = createString("tourId");
+    public final NumberPath<Integer> tourId = createNumber("tourId", Integer.class);
 
     public final DatePath<java.time.LocalDate> updDt = createDate("updDt", java.time.LocalDate.class);
 

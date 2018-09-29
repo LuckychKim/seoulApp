@@ -9,6 +9,6 @@ public class CoursePK implements Serializable {
 	
 	private static final long serialVersionUID = -3777937207533558441L;
 	
-	private String courseId;
-	private String tourId;
+	private Integer courseId;
+	private Integer tourId;
 }

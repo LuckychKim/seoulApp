@@ -17,7 +17,7 @@ public class ReviewController {
 	ReviewService reviewService;
 	
 	@PostMapping("/retrieveReview")
-	public Review retrieveReviewById( String reviewId ) {
+	public Review retrieveReviewById( int reviewId ) {
 		
 		return reviewService.retrieveReviewById(reviewId);
 	}
@@ -35,7 +35,7 @@ public class ReviewController {
 	}
 	
 	@PostMapping("deleteReview")
-	public boolean deleteReview( String reviewId ) {
+	public boolean deleteReview( int reviewId ) {
 		
 		return reviewService.deleteReview(reviewId);
 	}
