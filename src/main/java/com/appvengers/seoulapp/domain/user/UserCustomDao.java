@@ -4,7 +4,6 @@ import java.util.List;
 
 public interface UserCustomDao{
 
-	List<User> findAllUserByUserName();
-	List<String> findAllUserName();
+	public boolean updateUser(User user);
 	List<LoginInfo> findAllLoginInfoByUserId(User pUser);
 }

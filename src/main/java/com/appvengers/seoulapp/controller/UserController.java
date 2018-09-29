@@ -20,8 +20,20 @@ public class UserController {
 	UserService userService;
 	
 	@PostMapping("/login")
-	public List<LoginInfo> loginOrJoin(@RequestBody User user) {
-		return userService.loginOrJoin(user);
+	public List<LoginInfo> loginOrJoin( @RequestBody User user ) {
+		return userService.loginOrJoin( user );
+	}
+	
+	@PostMapping("updateUser")
+	public boolean updateUser( @RequestBody User user ) {
+		
+		return userService.updateUser( user );
+	}
+	
+	@PostMapping("deleteUser")
+	public boolean deleteUser( int userId ) {
+		
+		return userService.deleteUser( userId );
 	}
 
 }

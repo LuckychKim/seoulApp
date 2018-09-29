@@ -32,4 +32,22 @@ public class UserServiceImpl implements UserService {
 		
 		return loginInfoList;
 	}
+
+	@Override
+	public boolean updateUser(User user) {
+		return userDao.updateUser(user);
+	}
+
+	@Override
+	public boolean deleteUser( int userId ) {
+		boolean isDeleted = false;
+		
+		try {
+			userDao.deleteById( userId );
+			isDeleted = true;
+		} catch(Exception e) {
+			throw e;
+		}
+		return isDeleted;
+	}
 }

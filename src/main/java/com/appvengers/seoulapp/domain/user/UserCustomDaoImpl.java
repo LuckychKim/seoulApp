@@ -1,6 +1,10 @@
 package com.appvengers.seoulapp.domain.user;
 
+import java.time.LocalDate;
 import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
@@ -8,31 +12,38 @@ import org.springframework.stereotype.Repository;
 import com.appvengers.seoulapp.domain.common.QCommon;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.JPQLQuery;
+import com.querydsl.jpa.impl.JPAUpdateClause;
 
 @Repository
 public class UserCustomDaoImpl extends QuerydslRepositorySupport implements UserCustomDao {
 
+	@PersistenceContext
+	EntityManager em;
+	
 	public UserCustomDaoImpl() {
 		super(User.class);
 	}
 
 	@Override
-	public List<User> findAllUserByUserName() {
-		QUser user = QUser.user;
+	public boolean updateUser(User user) {
+		QUser qUser = QUser.user;
 		
-		return from(user)
-				.where(user.userName.eq("Á¶¿øÁø"))
-				.fetch();
+		JPAUpdateClause updateClause = new JPAUpdateClause(em, qUser);
+		
+		if(user.getUserName() != null) {
+			updateClause.set(qUser.userName, user.getUserName());
+		}
+		if(user.getUserImg() != null) {
+			updateClause.set(qUser.userImg, user.getUserImg());
+		}
+				
+		updateClause.set(qUser.regDt, LocalDate.now())
+				.where(qUser.userId.eq(user.getUserId()));
+		
+		long successCnt = updateClause.execute();
+		return successCnt > 0 ? true : false;
 	}
-
-	@Override
-	public List<String> findAllUserName() {
-		QUser user = QUser.user;
-		return from(user)
-				.select(user.userName)
-				.fetch();
-	}
-
+	
 	@Override
 	public List<LoginInfo> findAllLoginInfoByUserId(User pUser) {
 		QUser user = QUser.user;
