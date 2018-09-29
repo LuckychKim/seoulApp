@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Embeddable;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -25,7 +27,9 @@ public class LoginInfo {
 	private String cateId;
 	@NonNull
 	private String comName;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date regDt;
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date updDt;
 	
 }
