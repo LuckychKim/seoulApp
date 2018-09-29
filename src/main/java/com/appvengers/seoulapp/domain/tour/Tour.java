@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 
 @Data
@@ -43,10 +45,12 @@ public class Tour {
 	
 	@Column
 	@Type(type="date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date regDt;
 	
 	@Column
 	@Type(type="date")
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date updDt;
 	
 	
