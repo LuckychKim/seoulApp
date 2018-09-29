@@ -70,6 +70,8 @@ public class QTourRequestDto extends BeanPath<TourRequestDto> {
     //inherited
     public final DateTimePath<java.util.Date> regDt = _super.regDt;
 
+    public final StringPath reserveCount = createString("reserveCount");
+
     //inherited
     public final StringPath startDt = _super.startDt;
 

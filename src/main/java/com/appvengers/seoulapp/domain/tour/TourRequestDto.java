@@ -12,6 +12,7 @@ public class TourRequestDto extends Tour {
 	
 	private String comName;
 	private String avgScore;
+	private String reserveCount;
 
 	public TourRequestDto(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,

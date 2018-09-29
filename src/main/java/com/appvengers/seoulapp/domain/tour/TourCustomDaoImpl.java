@@ -87,6 +87,7 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	public TourRequestDto retrieveTourById(int tourId) {
 		QTour tour = QTour.tour;
 		QReview review = QReview.review;
+		QReservation reservation = QReservation.reservation;
 		QCommon common = QCommon.common;
 		
 		TourRequestDto tourDto = from(tour)
@@ -128,6 +129,9 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		float avgScore = scoreSum/scoreList.size();
 		
 		tourDto.setAvgScore(Float.toString(avgScore));
+		tourDto.setReserveCount(
+				from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
+				);
 		return tourDto;
 	}
 
