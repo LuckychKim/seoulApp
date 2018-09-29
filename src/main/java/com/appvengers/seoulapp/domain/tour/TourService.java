@@ -8,9 +8,9 @@ public interface TourService {
 
 	public List<Tour> retrievePopularTourList();
 	public List<TourDetailDto> retrieveTourDetailInfo();
-	public Tour retrieveTourById( int tourId );
+	public Tour retrieveTour( int tourId );
 	public List<Common> retrieveTourList();
-	public TourDetailDto retrieveTourListById( int tourId );
+	public TourDetailDto retrieveTourById( int tourId );
 	public boolean insertTour( Tour tour );
 	public boolean updateTour( Tour tour );
 	public boolean deleteTour( int tourId );

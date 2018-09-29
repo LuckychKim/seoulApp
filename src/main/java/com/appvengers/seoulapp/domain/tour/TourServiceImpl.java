@@ -33,7 +33,7 @@ public class TourServiceImpl implements TourService{
 	}
 
 	@Override
-	public Tour retrieveTourById(int tourId) {
+	public Tour retrieveTour(int tourId) {
 		return tourDao.findById(tourId).get();
 	}
 	
@@ -43,8 +43,8 @@ public class TourServiceImpl implements TourService{
 	}
 	
 	@Override
-	public TourDetailDto retrieveTourListById(int tourId) {
-		return tourDao.retrieveTourListById(tourId);
+	public TourDetailDto retrieveTourById(int tourId) {
+		return tourDao.retrieveTourById(tourId);
 	}
 
 	@Override

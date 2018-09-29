@@ -6,7 +6,7 @@ public interface TourCustomDao {
 
 	public List<Tour> retrievePopularTourList();
 	public List<TourDetailDto> retrieveTourDetailInfo();
-	public TourDetailDto retrieveTourListById(int tourId);
+	public TourDetailDto retrieveTourById(int tourId);
 	public boolean updateTour( Tour tour );
 	public List<Tour> findRecommendTourList();
 }

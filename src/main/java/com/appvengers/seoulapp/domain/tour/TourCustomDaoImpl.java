@@ -1,6 +1,5 @@
 package com.appvengers.seoulapp.domain.tour;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +84,7 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	}
 	
 	@Override
-	public TourDetailDto retrieveTourListById(int tourId) {
+	public TourDetailDto retrieveTourById(int tourId) {
 		QTour tour = QTour.tour;
 		QReview review = QReview.review;
 		QCommon common = QCommon.common;
@@ -119,9 +118,16 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 				.where(common.groupCd.eq("BANKCD"))
 				.where(tour.tourId.eq(tourId)).fetchOne();
 		
-		tourDto.setAvgScore(from(review)
-				.select(review.score.coalesce("0"))
-				.where(review.tourId.eq(tourId)).fetchOne());
+		List<String> scoreList = from(review).select(review.score.coalesce("0")).where(review.tourId.eq(tourId)).fetch();
+		
+		int scoreSum = 0;
+		for(String score : scoreList) {
+			scoreSum += Integer.parseInt(score);
+		}
+		
+		float avgScore = scoreSum/scoreList.size();
+		
+		tourDto.setAvgScore(Float.toString(avgScore));
 		return tourDto;
 	}
 
