@@ -30,7 +30,7 @@ public class TourController {
 		return tourService.retrieveTourDetailInfo();
 	}
 	
-	@GetMapping("/retrieveTour")
+	@PostMapping("/retrieveTour")
 	public Tour retrieveTourById( String tourId ) {
 		
 		return tourService.retrieveTourById(tourId);
