@@ -48,7 +48,7 @@ public class CourseServiceImpl implements CourseService{
 
 	@Override
 	public List<Course> retrieveCourseListByTourId(int tourId) {
-		return courseDao.findAllByTourId(tourId);
+		return courseDao.findAllByTourIdOrderByCourseIdAsc(tourId);
 	}
 
 }
