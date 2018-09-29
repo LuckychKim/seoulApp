@@ -7,10 +7,10 @@ import com.appvengers.seoulapp.domain.common.Common;
 public interface TourService {
 
 	public List<Tour> retrievePopularTourList();
-	public List<TourDetailDto> retrieveTourDetailInfo();
+	public List<TourRequestDto> retrieveTourDetailInfo();
 	public Tour retrieveTour( int tourId );
 	public List<Common> retrieveTourList();
-	public TourDetailDto retrieveTourById( int tourId );
+	public TourRequestDto retrieveTourById( int tourId );
 	public boolean insertTour( Tour tour );
 	public boolean updateTour( Tour tour );
 	public boolean deleteTour( int tourId );

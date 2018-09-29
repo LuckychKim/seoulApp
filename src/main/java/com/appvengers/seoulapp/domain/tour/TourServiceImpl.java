@@ -27,7 +27,7 @@ public class TourServiceImpl implements TourService{
 	}
 	
 	@Override
-	public List<TourDetailDto> retrieveTourDetailInfo() {
+	public List<TourRequestDto> retrieveTourDetailInfo() {
 		
 		return tourDao.retrieveTourDetailInfo();
 	}
@@ -43,7 +43,7 @@ public class TourServiceImpl implements TourService{
 	}
 	
 	@Override
-	public TourDetailDto retrieveTourById(int tourId) {
+	public TourRequestDto retrieveTourById(int tourId) {
 		return tourDao.retrieveTourById(tourId);
 	}
 

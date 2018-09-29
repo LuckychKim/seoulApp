@@ -10,14 +10,14 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * QTourDetailDto is a Querydsl query type for TourDetailDto
+ * QTourRequestDto is a Querydsl query type for TourRequestDto
  */
 @Generated("com.querydsl.codegen.EmbeddableSerializer")
-public class QTourDetailDto extends BeanPath<TourDetailDto> {
+public class QTourRequestDto extends BeanPath<TourRequestDto> {
 
-    private static final long serialVersionUID = 643808045L;
+    private static final long serialVersionUID = -442935983L;
 
-    public static final QTourDetailDto tourDetailDto = new QTourDetailDto("tourDetailDto");
+    public static final QTourRequestDto tourRequestDto = new QTourRequestDto("tourRequestDto");
 
     public final QTour _super = new QTour(this);
 
@@ -97,16 +97,16 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     //inherited
     public final StringPath userId = _super.userId;
 
-    public QTourDetailDto(String variable) {
-        super(TourDetailDto.class, forVariable(variable));
+    public QTourRequestDto(String variable) {
+        super(TourRequestDto.class, forVariable(variable));
     }
 
-    public QTourDetailDto(Path<? extends TourDetailDto> path) {
+    public QTourRequestDto(Path<? extends TourRequestDto> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public QTourDetailDto(PathMetadata metadata) {
-        super(TourDetailDto.class, metadata);
+    public QTourRequestDto(PathMetadata metadata) {
+        super(TourRequestDto.class, metadata);
     }
 
 }

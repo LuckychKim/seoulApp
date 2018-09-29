@@ -49,14 +49,14 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	}
 	
 	@Override
-	public List<TourDetailDto> retrieveTourDetailInfo() {
+	public List<TourRequestDto> retrieveTourDetailInfo() {
 		QTour tour = QTour.tour;
 		QCommon common = QCommon.common;
 		
-		JPQLQuery<TourDetailDto> query = from(tour)
+		JPQLQuery<TourRequestDto> query = from(tour)
 				.leftJoin(common)
 				.on(tour.bankCd.eq(common.comCd))
-				.select(Projections.constructor(TourDetailDto.class, 
+				.select(Projections.constructor(TourRequestDto.class, 
 						tour.tourId,
 						tour.userId,
 						tour.title,
@@ -84,15 +84,15 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	}
 	
 	@Override
-	public TourDetailDto retrieveTourById(int tourId) {
+	public TourRequestDto retrieveTourById(int tourId) {
 		QTour tour = QTour.tour;
 		QReview review = QReview.review;
 		QCommon common = QCommon.common;
 		
-		TourDetailDto tourDto = from(tour)
+		TourRequestDto tourDto = from(tour)
 				.leftJoin(common)
 				.on(tour.bankCd.eq(common.comCd))
-				.select(Projections.constructor(TourDetailDto.class, 
+				.select(Projections.constructor(TourRequestDto.class, 
 						tour.tourId,
 						tour.userId,
 						tour.title,
