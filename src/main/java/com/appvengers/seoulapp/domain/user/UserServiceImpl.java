@@ -1,13 +1,15 @@
 package com.appvengers.seoulapp.domain.user;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
 	@Autowired

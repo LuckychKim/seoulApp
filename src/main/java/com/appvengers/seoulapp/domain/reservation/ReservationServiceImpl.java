@@ -2,10 +2,13 @@ package com.appvengers.seoulapp.domain.reservation;
 
 import java.util.Date;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Transactional
 public class ReservationServiceImpl implements ReservationService {
 
 	@Autowired

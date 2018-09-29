@@ -1,17 +1,18 @@
 package com.appvengers.seoulapp.domain.tour;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.appvengers.seoulapp.domain.common.Common;
 import com.appvengers.seoulapp.domain.common.CommonService;
-import com.appvengers.seoulapp.domain.tour.Tour;
 
 @Service
+@Transactional
 public class TourServiceImpl implements TourService{
 
 	@Autowired
