@@ -11,6 +11,7 @@ import lombok.Setter;
 public class TourDetailDto extends Tour {
 	
 	private String comName;
+	private String avgScore;
 
 	public TourDetailDto(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,

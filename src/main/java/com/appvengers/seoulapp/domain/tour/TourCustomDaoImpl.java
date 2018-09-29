@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.appvengers.seoulapp.domain.common.QCommon;
 import com.appvengers.seoulapp.domain.reservation.QReservation;
+import com.appvengers.seoulapp.domain.review.QReview;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.Wildcard;
 import com.querydsl.jpa.JPQLQuery;
@@ -86,9 +87,10 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 	@Override
 	public TourDetailDto retrieveTourListById(int tourId) {
 		QTour tour = QTour.tour;
+		QReview review = QReview.review;
 		QCommon common = QCommon.common;
 		
-		JPQLQuery<TourDetailDto> query = from(tour)
+		TourDetailDto tourDto = from(tour)
 				.leftJoin(common)
 				.on(tour.bankCd.eq(common.comCd))
 				.select(Projections.constructor(TourDetailDto.class, 
@@ -115,8 +117,12 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 						common.comName
 						))
 				.where(common.groupCd.eq("BANKCD"))
-				.where(tour.tourId.eq(tourId));
-		return query.fetchOne();
+				.where(tour.tourId.eq(tourId)).fetchOne();
+		
+		tourDto.setAvgScore(from(review)
+				.select(review.score.coalesce("0"))
+				.where(review.tourId.eq(tourId)).fetchOne());
+		return tourDto;
 	}
 
 	@Override

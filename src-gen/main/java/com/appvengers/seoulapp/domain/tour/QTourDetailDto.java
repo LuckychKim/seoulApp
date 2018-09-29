@@ -30,6 +30,8 @@ public class QTourDetailDto extends BeanPath<TourDetailDto> {
     //inherited
     public final StringPath addrRepresent = _super.addrRepresent;
 
+    public final StringPath avgScore = createString("avgScore");
+
     //inherited
     public final StringPath bankCd = _super.bankCd;
 
