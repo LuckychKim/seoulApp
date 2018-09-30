@@ -121,12 +121,18 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		
 		List<String> scoreList = from(review).select(review.score.coalesce("0")).where(review.tourId.eq(tourId)).fetch();
 		
+		float avgScore;
 		int scoreSum = 0;
-		for(String score : scoreList) {
-			scoreSum += Integer.parseInt(score);
-		}
 		
-		float avgScore = scoreSum/scoreList.size();
+		if(scoreList.isEmpty()) {
+			avgScore = 0;
+		} else {
+			for(String score : scoreList) {
+				scoreSum += Integer.parseInt(score);
+			}
+			
+			avgScore = scoreSum/scoreList.size();
+		}
 		
 		tourDto.setAvgScore(Float.toString(avgScore));
 		tourDto.setReserveCount(
