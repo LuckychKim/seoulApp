@@ -47,6 +47,11 @@ public class TourServiceImpl implements TourService{
 	public TourRequestDto retrieveTourById(int tourId) {
 		return tourDao.retrieveTourById(tourId);
 	}
+	
+	@Override
+	public List<TourReservedDto> retireveReservatedTourList(String userId) {
+		return tourDao.retireveReservatedTourList(userId);
+	}
 
 	@Override
 	public boolean insertTour(Tour tour) {

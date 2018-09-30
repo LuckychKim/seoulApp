@@ -134,6 +134,42 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 				);
 		return tourDto;
 	}
+	
+	@Override
+	public List<TourReservedDto> retireveReservatedTourList(String userId) {
+		QTour tour = QTour.tour;
+		QReservation reservation = QReservation.reservation;
+		
+		JPQLQuery<TourReservedDto> query = from(reservation)
+				.leftJoin(tour)
+				.on(tour.tourId.eq(reservation.tourId))
+				.select(Projections.constructor(TourReservedDto.class, 
+						tour.tourId,
+						tour.userId,
+						tour.title,
+						tour.subTitle,
+						tour.startDt,
+						tour.tourImg,
+						tour.tourCont,
+						tour.minNum,
+						tour.maxNum,
+						tour.latitude,
+						tour.longitude,
+						tour.addr,
+						tour.addrRepresent,
+						tour.meetTm,
+						tour.finishTm,
+						tour.leadTm,
+						tour.tel,
+						tour.acntNm,
+						tour.bankNo,
+						tour.price,
+						reservation.confYn
+						))
+				.where(tour.userId.eq(userId));
+		
+		return query.fetch();
+	}
 
 	@Override
 	public boolean updateTour(Tour tour) {

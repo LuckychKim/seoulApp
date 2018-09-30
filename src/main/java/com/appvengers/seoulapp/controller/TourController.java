@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.appvengers.seoulapp.domain.common.Common;
 import com.appvengers.seoulapp.domain.tour.Tour;
 import com.appvengers.seoulapp.domain.tour.TourRequestDto;
+import com.appvengers.seoulapp.domain.tour.TourReservedDto;
 import com.appvengers.seoulapp.domain.tour.TourService;
 
 @RestController
@@ -36,6 +37,12 @@ public class TourController {
 	public Tour retrieveTour( @PathVariable int tourId ) {
 		
 		return tourService.retrieveTour(tourId);
+	}
+	
+	@GetMapping("/retireveReservatedTourList/{userId}")
+	public List<TourReservedDto> retireveReservatedTourList( @PathVariable String userId ) {
+		
+		return tourService.retireveReservatedTourList(userId);
 	}
 	
 	@GetMapping("/retrieveTourList")
