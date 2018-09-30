@@ -218,9 +218,6 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		if(tour.getLatitude() != null) {
 			updateClause.set(qTour.latitude, tour.getLatitude());
 		}
-		if(tour.getLatitude() != null) {
-			updateClause.set(qTour.latitude, tour.getLatitude());
-		}
 		if(tour.getLongitude() != null) {
 			updateClause.set(qTour.longitude, tour.getLongitude());
 		}

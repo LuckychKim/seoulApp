@@ -30,8 +30,8 @@ public class Tour {
 	private String tourCont;
 	private Integer minNum;
 	private Integer maxNum;
-	private Long latitude;
-	private Long longitude;
+	private String latitude;
+	private String longitude;
 	private String addr;
 	private String addrRepresent;
 	private String meetTm;
@@ -65,7 +65,7 @@ public class Tour {
 	}
 
 	public Tour(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
-			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
+			String tourCont, Integer minNum, Integer maxNum, String latitude, String longitude, String addr,
 			String addrRepresent, String meetTm, String finishTm, String leadTm, String tel, String acntNm, String bankNo,
 			Integer price) {
 		super();

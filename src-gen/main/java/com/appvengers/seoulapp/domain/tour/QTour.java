@@ -33,11 +33,11 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath finishTm = createString("finishTm");
 
-    public final NumberPath<Long> latitude = createNumber("latitude", Long.class);
+    public final StringPath latitude = createString("latitude");
 
     public final StringPath leadTm = createString("leadTm");
 
-    public final NumberPath<Long> longitude = createNumber("longitude", Long.class);
+    public final StringPath longitude = createString("longitude");
 
     public final NumberPath<Integer> maxNum = createNumber("maxNum", Integer.class);
 

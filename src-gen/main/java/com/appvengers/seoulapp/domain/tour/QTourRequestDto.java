@@ -47,13 +47,13 @@ public class QTourRequestDto extends BeanPath<TourRequestDto> {
     public final StringPath finishTm = _super.finishTm;
 
     //inherited
-    public final NumberPath<Long> latitude = _super.latitude;
+    public final StringPath latitude = _super.latitude;
 
     //inherited
     public final StringPath leadTm = _super.leadTm;
 
     //inherited
-    public final NumberPath<Long> longitude = _super.longitude;
+    public final StringPath longitude = _super.longitude;
 
     //inherited
     public final NumberPath<Integer> maxNum = _super.maxNum;
