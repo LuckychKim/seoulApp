@@ -1,6 +1,5 @@
 package com.appvengers.seoulapp.domain.reservation;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import javax.persistence.EntityManager;
@@ -42,7 +41,7 @@ public class ReservationCustomDaoImpl extends QuerydslRepositorySupport implemen
 				.where(qReserv.bookId.eq(reservation.getBookId()));
 		
 		long successCnt = updateClause.execute();
-		return successCnt > 0 ? true : false;
+		return successCnt > 0;
 	}
 
 }

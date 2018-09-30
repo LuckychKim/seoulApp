@@ -9,9 +9,6 @@ import javax.persistence.PersistenceContext;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.stereotype.Repository;
 
-import com.appvengers.seoulapp.domain.reservation.QReservation;
-import com.appvengers.seoulapp.domain.tour.QTour;
-import com.appvengers.seoulapp.domain.tour.Tour;
 import com.appvengers.seoulapp.domain.user.QUser;
 import com.querydsl.core.types.Projections;
 import com.querydsl.core.types.dsl.Wildcard;
