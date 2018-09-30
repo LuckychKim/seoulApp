@@ -121,18 +121,61 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 		
 		List<String> scoreList = from(review).select(review.score.coalesce("0")).where(review.tourId.eq(tourId)).fetch();
 		
+		float avgScore;
 		int scoreSum = 0;
-		for(String score : scoreList) {
-			scoreSum += Integer.parseInt(score);
-		}
 		
-		float avgScore = scoreSum/scoreList.size();
+		if(scoreList.isEmpty()) {
+			avgScore = 0;
+		} else {
+			for(String score : scoreList) {
+				scoreSum += Integer.parseInt(score);
+			}
+			
+			avgScore = scoreSum/scoreList.size();
+		}
 		
 		tourDto.setAvgScore(Float.toString(avgScore));
 		tourDto.setReserveCount(
 				from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
 				);
 		return tourDto;
+	}
+	
+	@Override
+	public List<TourReservedDto> retireveReservatedTourList(String userId) {
+		QTour tour = QTour.tour;
+		QReservation reservation = QReservation.reservation;
+		
+		JPQLQuery<TourReservedDto> query = from(reservation)
+				.leftJoin(tour)
+				.on(tour.tourId.eq(reservation.tourId))
+				.select(Projections.constructor(TourReservedDto.class, 
+						tour.tourId,
+						tour.userId,
+						tour.title,
+						tour.subTitle,
+						tour.startDt,
+						tour.tourImg,
+						tour.tourCont,
+						tour.minNum,
+						tour.maxNum,
+						tour.latitude,
+						tour.longitude,
+						tour.addr,
+						tour.addrRepresent,
+						tour.meetTm,
+						tour.finishTm,
+						tour.leadTm,
+						tour.tel,
+						tour.acntNm,
+						tour.bankNo,
+						tour.price,
+						reservation.confYn
+						))
+				.where(tour.userId.eq(userId))
+				.orderBy(reservation.regDt.desc());
+		
+		return query.fetch();
 	}
 
 	@Override

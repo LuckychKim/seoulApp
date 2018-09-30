@@ -41,7 +41,7 @@ public class QTourRequestDto extends BeanPath<TourRequestDto> {
     public final StringPath comName = createString("comName");
 
     //inherited
-    public final DateTimePath<java.util.Date> endDt = _super.endDt;
+    public final StringPath endDt = _super.endDt;
 
     //inherited
     public final StringPath finishTm = _super.finishTm;
@@ -73,7 +73,7 @@ public class QTourRequestDto extends BeanPath<TourRequestDto> {
     public final StringPath reserveCount = createString("reserveCount");
 
     //inherited
-    public final DateTimePath<java.util.Date> startDt = _super.startDt;
+    public final StringPath startDt = _super.startDt;
 
     //inherited
     public final StringPath subTitle = _super.subTitle;

@@ -24,17 +24,8 @@ public class Tour {
 	private String userId;
 	private String title;
 	private String subTitle;
-	
-	@Column
-	@Type(type="date")
-	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date startDt;
-	
-	@Column
-	@Type(type="date")
-	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date endDt;
-	
+	private String startDt;
+	private String endDt;
 	private String tourImg;
 	private String tourCont;
 	private Integer minNum;
@@ -73,7 +64,7 @@ public class Tour {
 		this.price = price;
 	}
 
-	public Tour(Integer tourId, String userId, String title, String subTitle, Date startDt, String tourImg,
+	public Tour(Integer tourId, String userId, String title, String subTitle, String startDt, String tourImg,
 			String tourCont, Integer minNum, Integer maxNum, Long latitude, Long longitude, String addr,
 			String addrRepresent, String meetTm, String finishTm, String leadTm, String tel, String acntNm, String bankNo,
 			Integer price) {
