@@ -62,7 +62,7 @@ public class TourController {
 	}
 	
 	@PostMapping("/insertTour")
-	public boolean insertTour( @RequestBody Tour tour ) {
+	public Tour insertTour( @RequestBody Tour tour ) {
 		
 		return tourService.insertTour(tour);
 	}

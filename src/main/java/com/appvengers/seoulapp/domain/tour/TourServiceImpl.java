@@ -54,12 +54,12 @@ public class TourServiceImpl implements TourService{
 	}
 
 	@Override
-	public boolean insertTour(Tour tour) {
+	public Tour insertTour(Tour tour) {
 		Date now = new Date();
 		tour.setRegDt(now);
 		tour.setUpdDt(now);
-		Tour isSuccess = tourDao.save(tour);
-		return isSuccess != null;
+		Tour savedTour = tourDao.save(tour);
+		return savedTour;
 	}
 
 	@Override
