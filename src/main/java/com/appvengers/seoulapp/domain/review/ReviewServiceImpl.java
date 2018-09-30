@@ -1,6 +1,7 @@
 package com.appvengers.seoulapp.domain.review;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -17,6 +18,11 @@ public class ReviewServiceImpl implements ReviewService {
 	@Override
 	public Review retrieveReviewById(int reviewId) {
 		return reviewDao.findById(reviewId).get();
+	}
+	
+	@Override
+	public List<ReviewDto> retrieveTourReview(int tourId) {
+		return reviewDao.retrieveTourReview(tourId);
 	}
 
 	@Override

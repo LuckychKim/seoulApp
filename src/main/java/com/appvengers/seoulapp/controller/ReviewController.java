@@ -1,5 +1,7 @@
 package com.appvengers.seoulapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.appvengers.seoulapp.domain.review.Review;
+import com.appvengers.seoulapp.domain.review.ReviewDto;
 import com.appvengers.seoulapp.domain.review.ReviewService;
 
 @RestController
@@ -22,6 +25,11 @@ public class ReviewController {
 	public Review retrieveReviewById( @PathVariable int reviewId ) {
 		
 		return reviewService.retrieveReviewById(reviewId);
+	}
+	
+	@GetMapping("/retrieveTourReview/{tourId}")
+	public List<ReviewDto> retrieveTourReview( @PathVariable int tourId ) {
+		return reviewService.retrieveTourReview(tourId);
 	}
 	
 	@PostMapping("/insertReview")
@@ -41,4 +49,5 @@ public class ReviewController {
 		
 		return reviewService.deleteReview(reviewId);
 	}
+	
 }

@@ -53,4 +53,14 @@ public class Review {
 		this.regDt = regDt;
 		this.updDt = updDt;
 	}
+	
+	public Review(Integer reviewId, Integer tourId, String userId, String score, String reviewCont, Date updDt) {
+		super();
+		this.reviewId = reviewId;
+		this.tourId = tourId;
+		this.userId = userId;
+		this.score = score;
+		this.reviewCont = reviewCont;
+		this.updDt = updDt;
+	}
 }

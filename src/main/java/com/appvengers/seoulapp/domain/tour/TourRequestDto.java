@@ -4,12 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Embeddable;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @Embeddable
-@Getter
-@Setter
+@Data
 public class TourRequestDto extends Tour {
 	
 	private String comName;
