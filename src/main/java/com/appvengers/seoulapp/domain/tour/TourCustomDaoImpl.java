@@ -188,10 +188,10 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 			updateClause.set(qTour.subTitle, tour.getSubTitle());
 		}
 		if(tour.getStartDt() != null) {
-			updateClause.set(qTour.startDt, tour.getStartDt());
+//			updateClause.set(qTour.startDt, tour.getStartDt());
 		}
 		if(tour.getEndDt() != null) {
-			updateClause.set(qTour.endDt, tour.getEndDt());
+//			updateClause.set(qTour.endDt, tour.getEndDt());
 		}
 		if(tour.getTourImg() != null) {
 			updateClause.set(qTour.tourImg, tour.getTourImg());

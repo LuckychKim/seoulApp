@@ -29,7 +29,7 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final StringPath bankNo = createString("bankNo");
 
-    public final DateTimePath<java.util.Date> endDt = createDateTime("endDt", java.util.Date.class);
+    public final StringPath endDt = createString("endDt");
 
     public final StringPath finishTm = createString("finishTm");
 
@@ -49,7 +49,7 @@ public class QTour extends EntityPathBase<Tour> {
 
     public final DateTimePath<java.util.Date> regDt = createDateTime("regDt", java.util.Date.class);
 
-    public final DateTimePath<java.util.Date> startDt = createDateTime("startDt", java.util.Date.class);
+    public final StringPath startDt = createString("startDt");
 
     public final StringPath subTitle = createString("subTitle");
 

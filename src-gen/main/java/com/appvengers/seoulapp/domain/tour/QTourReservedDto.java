@@ -39,7 +39,7 @@ public class QTourReservedDto extends BeanPath<TourReservedDto> {
     public final StringPath confYn = createString("confYn");
 
     //inherited
-    public final DateTimePath<java.util.Date> endDt = _super.endDt;
+    public final StringPath endDt = _super.endDt;
 
     //inherited
     public final StringPath finishTm = _super.finishTm;
@@ -69,7 +69,7 @@ public class QTourReservedDto extends BeanPath<TourReservedDto> {
     public final DateTimePath<java.util.Date> regDt = _super.regDt;
 
     //inherited
-    public final DateTimePath<java.util.Date> startDt = _super.startDt;
+    public final StringPath startDt = _super.startDt;
 
     //inherited
     public final StringPath subTitle = _super.subTitle;
