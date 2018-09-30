@@ -166,7 +166,8 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 						tour.price,
 						reservation.confYn
 						))
-				.where(tour.userId.eq(userId));
+				.where(tour.userId.eq(userId))
+				.orderBy(reservation.regDt.desc());
 		
 		return query.fetch();
 	}
