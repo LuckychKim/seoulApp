@@ -132,12 +132,15 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 			}
 			
 			avgScore = scoreSum/scoreList.size();
+			tourDto.setAvgScore(Float.toString(avgScore));
 		}
 		
-		tourDto.setAvgScore(Float.toString(avgScore));
-		tourDto.setReserveCount(
-				from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
-				);
+		if(tourDto != null) {
+			tourDto.setReserveCount(
+					from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
+					);
+		}
+		
 		return tourDto;
 	}
 	
@@ -213,13 +216,10 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 			updateClause.set(qTour.maxNum, tour.getMaxNum());
 		}
 		if(tour.getLatitude() != null) {
-			updateClause.set(qTour.latitude, tour.getLatitude());
-		}
-		if(tour.getLatitude() != null) {
-			updateClause.set(qTour.latitude, tour.getLatitude());
+//			updateClause.set(qTour.latitude, tour.getLatitude());
 		}
 		if(tour.getLongitude() != null) {
-			updateClause.set(qTour.longitude, tour.getLongitude());
+//			updateClause.set(qTour.longitude, tour.getLongitude());
 		}
 		if(tour.getAddr() != null) {
 			updateClause.set(qTour.addr, tour.getAddr());

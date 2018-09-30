@@ -12,7 +12,7 @@ public interface TourService {
 	public List<Common> retrieveTourList();
 	public TourRequestDto retrieveTourById( int tourId );
 	public List<TourReservedDto> retireveReservatedTourList( String userId );
-	public boolean insertTour( Tour tour );
+	public Tour insertTour( Tour tour );
 	public boolean updateTour( Tour tour );
 	public boolean deleteTour( int tourId );
 	public List<Tour> retrieveRecommendTourList();
