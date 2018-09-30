@@ -132,12 +132,15 @@ public class TourCustomDaoImpl extends QuerydslRepositorySupport implements Tour
 			}
 			
 			avgScore = scoreSum/scoreList.size();
+			tourDto.setAvgScore(Float.toString(avgScore));
 		}
 		
-		tourDto.setAvgScore(Float.toString(avgScore));
-		tourDto.setReserveCount(
-				from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
-				);
+		if(tourDto != null) {
+			tourDto.setReserveCount(
+					from(reservation).select(Wildcard.count).where(reservation.tourId.eq(tourId)).fetchOne().toString()
+					);
+		}
+		
 		return tourDto;
 	}
 	
